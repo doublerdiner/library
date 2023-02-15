@@ -11,6 +11,6 @@ CREATE TABLE books (
     title VARCHAR(255),
     author_id INT NOT NULL REFERENCES authors(id),
     genre VARCHAR(255),
-    publisher VARCHAR(255)
+    publisher VARCHAR(255),
     page_count INT
 );

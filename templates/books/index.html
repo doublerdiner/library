@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+
+{%block content%}
+<section class="index">
+    <aside class="aside"></aside>
+    <div class="middle">
+        <h2 class="headings">Books in the Library</h2>
+        <section>
+            <div>
+            <table class="table">
+                <tr>
+                    <th>Title </th>
+                    <th>Author </th>
+                    <th>Genre </th>
+                    <th>Publisher </th>
+                    <th>Page Count</th>
+                </tr>
+                {%for book in all_books%}
+                <tr>
+                    <td><a href="books/{{book.id}}">{{book.title}}</a></td>
+                    <td>{{book.author.name}}</td>
+                    <td>{{book.genre}}</td>
+                    <td>{{book.publisher}}</td>
+                    <td>{{book.page_count}}</td>
+                </tr>
+                {%endfor%} 
+            </table>     
+            </div>
+        </section>
+     </div>
+    <aside class="aside"></aside>
+
+
+
+
+
+</section>
+{%endblock%}

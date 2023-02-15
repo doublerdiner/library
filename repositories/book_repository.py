@@ -5,9 +5,45 @@ import repositories.author_repository as author_repository
 
 def save(book):
     sql = "INSERT INTO books (title, author_id, genre, publisher, page_count) VALUES (%s, %s, %s, %s, %s) RETURNING *"
-    author_id = book.author.id
-    values = [book.title, author_id, book.genre, book.publisher, book.page_count]
+    values = [book.title, book.author.id, book.genre, book.publisher, book.page_count]
     results = run_sql(sql, values)
     id = results[0]['id']
     book.id = id
     return book
+
+def delete(id):
+    sql = "DELETE FROM books WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def delete_all():
+    sql = "DELETE FROM books"
+    run_sql(sql)
+
+def update(book):
+    sql = "UPDATE books SET (title, author_id, genre, publisher, page_count) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [book.title, book.author.id, book.genre, book.publisher, book.page_count, book.id]
+    run_sql(sql, values)
+
+
+def select(id):
+    book = None
+    sql = "SELECT * FROM books WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        author = author_repository.select(result['author_id'])
+        book = Book(result['title'], author, result['genre'], result['publisher'], result['page_count'], result['id'])
+    return book
+
+
+def select_all():
+    books = []
+    sql = "SELECT * FROM books"
+    results = run_sql(sql)
+    for row in results:
+        author = author_repository.select(row['author_id'])
+        book = Book(row['title'], author, row['genre'], row['publisher'], row['page_count'], row['id'])
+        books.append(book)
+    return books

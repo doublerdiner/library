@@ -1,0 +1,52 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<section class="book">
+    <aside class="aside"></aside>
+        <div class="middle">
+            <table class="booktable">
+                <tr>
+                    <th>Title: </th>
+                    <td>{{book.title}}</td>
+                </tr>
+                <tr>
+                    <th>Author: </th>
+                    <td>{{book.author.name}}</td>
+                </tr>
+                <tr>
+                    <th>Genre: </th>
+                    <td>{{book.genre}}</td>
+                </tr>
+                <tr>
+                    <th>Publisher: </th>
+                    <td>{{book.publisher}}</td>
+                </tr>
+                <tr>
+                    <th>Page Count:</th>
+                    <td>{{book.page_count}}</td>
+                </tr>
+                <tr>
+                    <th>Edit Title:</th>
+                    <td>
+                        <form action="/books/edit/{{book.id}}">
+                            <button class="view" type="submit">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Delete Title from the Library:</th>
+                    <td>
+                        <form action="/books/{{book.id}}/delete" method="POST">
+                            <button class="delete" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <aside class="aside"></aside>
+
+
+</section>
+
+{%endblock%}

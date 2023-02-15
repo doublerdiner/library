@@ -1,0 +1,162 @@
+/* BASE */
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header{
+    padding: 5rem;
+    background-color: rgba(34, 0, 147, 0.851);
+    color: white;
+    border-bottom: 3px solid gold;
+}
+
+.navfooter{
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+    background-color: rgba(28, 0, 122, 0.639);
+    color: white;
+}
+
+nav>ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+nav>ul>li{
+    padding-right: 3rem;
+}
+
+nav>ul>li>a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav>ul>li>a:hover{
+    text-decoration: underline;
+}
+
+
+footer{
+    border-bottom: 3px solid gold;
+    border-top: 3px solid gold;
+}
+
+/* INDEX */
+
+.index{
+    display: flex;
+    background-color: rgba(229, 229, 229, 0.54);
+}
+
+.aside{
+    width: 10%;
+    /* background-color: rgba(28, 0, 122, 0.068); */
+}
+
+.middle{
+    width: 80%;
+}
+
+.headings{
+    text-align: center;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+table,th, td{
+    border: 1px solid;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.delete{
+    color: black;
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 1rem;
+    background: rgba(255, 112, 112, 0.872);
+    border-radius: 3px;
+}
+
+.delete:link{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.767);
+}
+.delete:hover{
+    cursor: pointer;
+    background: rgb(255, 0, 0);
+}
+.delete:visited{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.767);
+}
+.delete:active{
+    text-decoration: none;
+    background: rgba(255, 0, 0, 0.555);
+}
+
+.view{
+    color: black;
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 1rem;
+    background: rgba(168, 211, 255, 0.872);
+    border-radius: 3px;
+}
+
+.view:link{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.767);
+}
+.view:hover{
+    cursor: pointer;
+    background: rgb(119, 187, 255);
+}
+.view:visited{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.767);
+}
+.view:active{
+    text-decoration: none;
+    background: rgba(168, 211, 255, 0.555);
+}
+
+.add{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.addnew{
+    border: 1px solid black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Book */
+
+.book{
+    display: flex;
+    background-color: #e5e5e58a;
+}
+
+.booktable{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 35rem;
+}

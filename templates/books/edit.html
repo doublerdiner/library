@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+
+{%block content%}
+<section class="index">
+    <aside class="aside"></aside>
+    <div class="middle">
+        <h2 class="headings">Edit Book</h2>
+        <section class="addnew">
+            <div class="add">
+                <form action="/books/{{book.id}}" method="POST">
+                    <label for="title"> Title: </label>
+                    <input id="title" name="title" type="text" value="{{book.title}}" required autofocus>
+                    <label for="author">Author: </label>
+                    <select name="author" id="author">
+                        {%for author in all_authors%}<option value="{{author.id}}"
+                        {%if book.author.id == author.id %} selected='selected' {%endif%}>{{author.name}}</option>{%endfor%}
+                    </select>
+                    <label for="genre">Genre: </label>
+                    <input id="genre" name="genre" type="text" value="{{book.genre}}" required>
+                    <label for="publisher">Publisher: </label>
+                    <input id="publisher" name="publisher" type="text" value="{{book.publisher}}"required>
+                    <label for="page_count">Page Count: </label>
+                    <input id="page_count" name="page_count" type="number" value="{{book.page_count}}"required>
+                    <button type="submit">Edit Book</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <aside class="aside"></aside>
+
+
+
+
+
+</section>
+{%endblock%}
